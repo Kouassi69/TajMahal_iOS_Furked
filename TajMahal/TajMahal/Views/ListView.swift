@@ -42,10 +42,16 @@ struct ListView: View {
                         .foregroundStyle(.secondary)
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     Spacer()
-                    HStack {
-                        ForEach(0..<3, id: \.self) { _ in
-                            createSpicyImage()
+                    HStack {//cette partie pour créer le nombre d'étoiles rouge en fonction du niveau d'épices.
+                        let spicy = getSpicyFunc(spice: myDish.spiceLevel) //Je détermine le niveau d'épices
+                        ForEach(0..<spicy, id: \.self) { _ in
+                            createSpicyImage().foregroundStyle(Color.red) //je crée les étoiles rouges correspondantes
                         }
+                        ForEach(0..<(3-spicy), id: \.self) { _ in //je crée le reste des étoiles qui sont grises
+                            createSpicyImage().foregroundStyle(.secondary)
+                        }
+                        
+                        
                     }
                 }
             }
@@ -67,28 +73,12 @@ func createSpicyImage() -> some View {
         print(Error.Type.self)
         return AnyView(EmptyView())
     }
-    return AnyView(
-        image
+    return AnyView(image
             .resizable()
             .frame(width: 20, height: 20, alignment: .trailing)
             .scaledToFit()
-            .foregroundStyle(.secondary)
     )
 }
-
-/*func createSpicyImage2() -> some View {
- let myImage : Image? = Image(systemName: "star.fill")
- guard let image = myImage else {
- print(Error.Type.self)
- return AnyView(EmptyView())
- }
- return image
- .resizable()
- .frame(width: 20, height: 20, alignment: .trailing)
- .scaledToFit()
- .foregroundStyle(.secondary)
- }*/
-
 
 
 #Preview {

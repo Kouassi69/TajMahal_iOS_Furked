@@ -33,19 +33,8 @@ struct Dish : Hashable {
 
 //Cette extension permet de gérer le formalistme des titres des sessions pour se conformer à la maquette
 extension String {
-    var capitalizedModelisation: String {
-        // 1
-        let firstLetter = self.prefix(1).capitalized
-        // 2
-        let remainingLetters = self.dropFirst().lowercased()
-        // 3
-        return firstLetter + remainingLetters
+    func capitalizedFirstLetter() -> String {
+        return self.capitalized(with: Locale.current)
     }
 }
 
-//Fonction pour définir le niveau d'épice pour chaque plat
-func SpicyLevel() -> Int {
-    
-    
-    return 1
-}

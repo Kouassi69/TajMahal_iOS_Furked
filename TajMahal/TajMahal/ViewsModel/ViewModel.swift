@@ -26,13 +26,26 @@ struct ViewModel {
      Dish(name: "Rogan Josh", description: "Agneau mijoté dans une sauce épicée", allergens: "Ail, oignon", ingredients: "Agneau, oignons, ail, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre, tomates en purée, huile, coriandre fraîche", spiceLevel: .hot, imageName: "Rogan Josh", price: "11,00€")]
 }
 
+// On crée ici la fonction qui permet de déterminer le nombre d'étoiles rouges en faisant correspondre avec le niveau d'épice
+func getSpicyFunc(spice: SpiceLevel) -> Int {
+    var spicy : Int
+    switch spice {
+    case .hot : spicy = 3
+    case .medium : spicy = 2
+    case .light : spicy = 1
+    }
+    return spicy
+}
 
-/*
-enum DishType: String {
-    case "Entrée"
-    case "Plats Principaux"
-} */
-
-/*func DishType() {
-    if
-}*/
+/*func createSpicyImage2() -> some View {
+ let myImage : Image? = Image(systemName: "star.fill")
+ guard let image = myImage else {
+ print(Error.Type.self)
+ return AnyView(EmptyView())
+ }
+ return image
+ .resizable()
+ .frame(width: 20, height: 20, alignment: .trailing)
+ .scaledToFit()
+ .foregroundStyle(.secondary)
+ }*/
