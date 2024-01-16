@@ -72,7 +72,7 @@ struct WelcomeView: View {
                 NavigationLink {
                     MenuView()
                 } label : {
-                    Text("Acceder au Menu")
+                    Text("Acceder au menu")
                         .foregroundStyle(.white)
                 }
                 .frame(width: myWidth, height: 40, alignment: .center)
