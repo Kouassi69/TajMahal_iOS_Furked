@@ -13,7 +13,10 @@
 		42E9DCB22AF11138007CE7D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E9DCB12AF11138007CE7D0 /* Assets.xcassets */; };
 		42E9DCB52AF11138007CE7D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E9DCB42AF11138007CE7D0 /* Preview Assets.xcassets */; };
 		42E9DCBF2AF11439007CE7D0 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9DCBE2AF11439007CE7D0 /* WelcomeView.swift */; };
-		42E9DCC22AF117AE007CE7D0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9DCC12AF117AE007CE7D0 /* MenuView.swift */; };
+		42E9DCC22AF117AE007CE7D0 /* MenuView_OLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9DCC12AF117AE007CE7D0 /* MenuView_OLD.swift */; };
+		9C538F932B5748A7008F91BA /* DishDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C538F922B5748A7008F91BA /* DishDetailsView.swift */; };
+		9C538F952B589306008F91BA /* SpicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C538F942B589306008F91BA /* SpicyView.swift */; };
+		9C5D36752B59E6BC00D26F27 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D36742B59E6BC00D26F27 /* MenuView.swift */; };
 		9C88F4002B549E7700877E50 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C88F3FF2B549E7700877E50 /* ListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +29,10 @@
 		42E9DCB42AF11138007CE7D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		42E9DCBE2AF11439007CE7D0 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		42E9DCC02AF11662007CE7D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		42E9DCC12AF117AE007CE7D0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		42E9DCC12AF117AE007CE7D0 /* MenuView_OLD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView_OLD.swift; sourceTree = "<group>"; };
+		9C538F922B5748A7008F91BA /* DishDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailsView.swift; sourceTree = "<group>"; };
+		9C538F942B589306008F91BA /* SpicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyView.swift; sourceTree = "<group>"; };
+		9C5D36742B59E6BC00D26F27 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9C88F3FF2B549E7700877E50 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,8 +89,11 @@
 			isa = PBXGroup;
 			children = (
 				42E9DCBE2AF11439007CE7D0 /* WelcomeView.swift */,
-				42E9DCC12AF117AE007CE7D0 /* MenuView.swift */,
+				42E9DCC12AF117AE007CE7D0 /* MenuView_OLD.swift */,
 				9C88F3FF2B549E7700877E50 /* ListView.swift */,
+				9C538F922B5748A7008F91BA /* DishDetailsView.swift */,
+				9C538F942B589306008F91BA /* SpicyView.swift */,
+				9C5D36742B59E6BC00D26F27 /* MenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,9 +187,12 @@
 				428D2B532AFA882700BBA4F5 /* ViewModel.swift in Sources */,
 				42E9DCBF2AF11439007CE7D0 /* WelcomeView.swift in Sources */,
 				9C88F4002B549E7700877E50 /* ListView.swift in Sources */,
-				42E9DCC22AF117AE007CE7D0 /* MenuView.swift in Sources */,
+				42E9DCC22AF117AE007CE7D0 /* MenuView_OLD.swift in Sources */,
+				9C5D36752B59E6BC00D26F27 /* MenuView.swift in Sources */,
 				42E9DCAE2AF11136007CE7D0 /* TajMahalApp.swift in Sources */,
+				9C538F952B589306008F91BA /* SpicyView.swift in Sources */,
 				428D2B512AFA851900BBA4F5 /* Model.swift in Sources */,
+				9C538F932B5748A7008F91BA /* DishDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

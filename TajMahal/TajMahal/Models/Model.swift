@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // Cette enumération répertorie 3 niveaux de piment
 enum SpiceLevel {
@@ -13,12 +14,6 @@ enum SpiceLevel {
     case medium
     case hot
 }
-
-/*
-//Cette énumération permet de catégoriser un plat ou une entrée
-enum Catergory {
-    case 
-} */
 
 // Représente l'objet "plat", qui figure sur la carte du menu
 struct Dish : Hashable {
@@ -37,4 +32,9 @@ extension String {
         return self.capitalized(with: Locale.current)
     }
 }
+
+
+let exampleDish = Dish(name: "Rogan Josh", description: "Agneau mijoté dans une sauce épicée", allergens: "Ail, oignon", ingredients: "Agneau, oignons, ail, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre, tomates en purée, huile, coriandre fraîche", spiceLevel: .hot, imageName: "Rogan Josh", price: "11,00€")
+
+
 

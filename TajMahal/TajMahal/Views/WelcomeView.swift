@@ -9,8 +9,8 @@ import SwiftUI
 
 // Page d'accueil
 struct WelcomeView: View {
+    
     var body: some View {
-        
         //Je récupère les dimensions de l'écran
         GeometryReader { geometry in
             let screenWidth = geometry.size.width
@@ -82,10 +82,6 @@ struct WelcomeView: View {
             }
             .padding(.top, 10)
         }
-        
-        
-        
-        
     }
 }
 

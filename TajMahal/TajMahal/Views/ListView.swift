@@ -11,19 +11,13 @@ struct ListView: View {
     //Je déclare le repas de façon général afin de pouvoir adapter les données
     let myDish: Dish
     var body: some View {
-        //Je récupère les dimensions de l'écran
-        //GeometryReader { geometry in
-        //let screenWidth = geometry.size.width
-        //let screenHeight = geometry.size.width
-        //Group {
         HStack {
             Image("\(myDish.imageName)")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 120, height: 100)
-                .clipShape(.rect(cornerSize: CGSize(width: 10.0, height: 10.0)))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding([.top, .leading, .bottom])
-            //Spacer()
             VStack(alignment: .leading) {
                 Text("\(myDish.name)")
                     .foregroundStyle(.primary)
@@ -42,17 +36,7 @@ struct ListView: View {
                         .foregroundStyle(.secondary)
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     Spacer()
-                    HStack {//cette partie pour créer le nombre d'étoiles rouge en fonction du niveau d'épices.
-                        let spicy = getSpicyFunc(spice: myDish.spiceLevel) //Je détermine le niveau d'épices
-                        ForEach(0..<spicy, id: \.self) { _ in
-                            createSpicyImage().foregroundStyle(Color.red) //je crée les étoiles rouges correspondantes
-                        }
-                        ForEach(0..<(3-spicy), id: \.self) { _ in //je crée le reste des étoiles qui sont grises
-                            createSpicyImage().foregroundStyle(.secondary)
-                        }
-                        
-                        
-                    }
+                    SpicyView(myDish: myDish)
                 }
             }
             .font(.system(size: 10, weight: .light, design: .default))
@@ -61,26 +45,12 @@ struct ListView: View {
         }
         .frame(height: 120)
         //.background(Color.red)
-        .clipShape(.rect(cornerSize: CGSize(width: 10.0, height: 10.0)))
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .padding()
     }
-}
-
-//Fonction pour créer les imagesSpicy de base
-func createSpicyImage() -> some View {
-    let myImage: Image? = Image(systemName: "star.fill")
-    guard let image = myImage else {
-        print("Image not found")
-        print(Error.Type.self)
-        return AnyView(EmptyView())
-    }
-    return AnyView(image
-            .resizable()
-            .frame(width: 20, height: 20, alignment: .trailing)
-            .scaledToFit()
-    )
 }
 
 
 #Preview {
-    ListView(myDish: Dish(name: "Samosas aux légumes", description: "Poulet mariné, grillé et servi dans une sauce masal", allergens: "Test", ingredients: "Test", spiceLevel: .light, imageName: "Samosas", price: "3,50€"))
+    ListView(myDish: exampleDish)
 }
