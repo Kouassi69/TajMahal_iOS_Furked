@@ -33,8 +33,15 @@ extension String {
     }
 }
 
+//Cette extension permet de créer une couleur spécifique pour le client
+extension Color {
+    init(rgbRed: Double, green: Double, blue: Double) {
+        self.init(red: rgbRed / 255.0, green: green / 255.0, blue: blue / 255.0)
+    }
+}
 
-let exampleDish = Dish(name: "Rogan Josh", description: "Agneau mijoté dans une sauce épicée", allergens: "Ail, oignon", ingredients: "Agneau, oignons, ail, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre, tomates en purée, huile, coriandre fraîche", spiceLevel: .hot, imageName: "Rogan Josh", price: "11,00€")
+
+let exampleDish = Dish(name: "Samousas aux légumes", description: "Agneau mijoté dans une sauce épicée", allergens: "Ail, oignon", ingredients: "Agneau, oignons, ail, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre, tomates en purée, huile, coriandre fraîche", spiceLevel: .hot, imageName: "Tikka Masala", price: "11,00€")
 
 
 

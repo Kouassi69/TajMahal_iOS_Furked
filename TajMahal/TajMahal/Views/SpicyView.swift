@@ -13,7 +13,7 @@ struct SpicyView: View {
         HStack {//cette partie pour créer le nombre d'étoiles rouge en fonction du niveau d'épices.
             let spicy = getSpicyFunc(spice: myDish.spiceLevel) //Je détermine le niveau d'épices
             ForEach(0..<spicy, id: \.self) { _ in
-                createSpicyImage().foregroundStyle(Color.red) //je crée les étoiles rouges correspondantes
+                createSpicyImage().foregroundStyle(Color(rgbRed: 191, green: 62, blue: 55)) //je crée les étoiles rouges correspondantes
             }
             ForEach(0..<(3-spicy), id: \.self) { _ in //je crée le reste des étoiles qui sont grises
                 createSpicyImage().foregroundStyle(.secondary)
@@ -32,8 +32,8 @@ func createSpicyImage() -> some View {
     }
     return AnyView(image
             .resizable()
-            .frame(width: 20, height: 20, alignment: .trailing)
-            .scaledToFit()
+            .scaledToFill()
+            .frame(width: 18, height: 18, alignment: .trailing)
     )
 }
 
