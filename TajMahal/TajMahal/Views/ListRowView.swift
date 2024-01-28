@@ -12,8 +12,9 @@ struct ListRowView: View {
     //Je déclare le repas de façon général afin de pouvoir adapter les données
     let myDish: Dish
     //let myWidth : CGFloat = 120
-    let lineWidth : CGFloat
-    let imageWidth : CGFloat
+    //let lineWidth : CGFloat
+    //let imageWidth : CGFloat
+    let lineHeight : CGFloat = 100
     
     
     var body: some View {
@@ -21,18 +22,43 @@ struct ListRowView: View {
         //let screenWidth = geometry.size.width //lecture de la taille de l'écran
         // s'assurer que myWidth ne devient jamais négatif afin d'éviter le message dans la console
         //let myWidth = max(screenWidth - 30, 0)
-        let space : CGFloat = 60
-        let textWidth = max(lineWidth - imageWidth - space, 0)
-        let myHeight : CGFloat = 100
+        //let space : CGFloat = 60
+        //let textWidth = max(lineWidth - imageWidth - space, 0)
+        //let myHeight : CGFloat = 100
         
         HStack {
             Image("\(myDish.imageName)")
                 .resizable()
-                .scaledToFit()
-                .frame(height: 200)
-            Spacer()
+                .scaledToFill()
+                .frame(width: myScreenWidth / 3, height: lineHeight) // pour assurer que l'image prend bien 1/3 de l'espace
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .padding(.trailing, 12)
                 
+            
+            VStack(alignment: .leading) {
+                Text("\(myDish.name)")
+                    .font(.custom(myFontName, size: 14 * dynamicFontSize))
+                    .fontWeight(.semibold)
+                Spacer()
+                Text("\(myDish.description)")
+                    .multilineTextAlignment(.leading)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(nil)
+                    .font(.custom(myFontName, size: 12 * dynamicFontSize))
+                Spacer()
+                HStack {
+                    Text("\(myDish.price)")
+                        .font(.custom(myFontName, size: 12 * dynamicFontSize))
+                        .fontWeight(.semibold)
+                    Spacer()
+                    SpicyView(myDish: myDish)
+                }
+            }.padding(.leading, 12)
         }
+        .frame(/*width: myScreenWidth , */height: lineHeight)
+        .foregroundStyle(.secondary)
+        //.padding(12)
+        //.background(Color.red)
         
         /*
          HStack {
@@ -87,5 +113,5 @@ struct ListRowView: View {
 
 
 #Preview {
-    ListRowView(myDish: exampleDish, lineWidth: 393 - 50, imageWidth: 131)
+    ListRowView(myDish: exampleDish)//, lineWidth: 393 - 50, imageWidth: 131)
 }

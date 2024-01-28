@@ -14,6 +14,7 @@ struct DishDetailsView: View {
     var body: some View {
         GeometryReader { geometry in
             let screenWidth = geometry.size.width //lecture de la taille de l'écran
+            let screenHeight = geometry.size.height
             // s'assurer que myWidth ne devient jamais négatif afin d'éviter le message dans la console
             let myWidth = max(screenWidth - 30, 0)
             
@@ -21,7 +22,7 @@ struct DishDetailsView: View {
                 VStack {
                     // Image principale avec le niveau spicy en haut à droite
                     ZStack(alignment: .top) {
-                        mainDishImage(width: myWidth) //Appel de la fonction qui crée la vue image
+                        mainDishImage(width: myWidth, height: 0.6 * screenHeight) //Appel de la fonction qui crée la vue image
                         spicyIndicator() //Appel de la fonction qui crée la vueniveau d'épice
                     }
                     // Détails du plat
@@ -43,11 +44,11 @@ struct DishDetailsView: View {
         }
     }
     
-    func mainDishImage(width: CGFloat) -> some View {
+    func mainDishImage(width: CGFloat, height: CGFloat) -> some View {
         Image("\(myDish.imageName)")
             .resizable()
             .scaledToFill()
-            .frame(width: width, height: 450) // On fixe la hauteur de l'image
+            .frame(width: width, height: height) // On fixe la hauteur de l'image
             .clipShape(RoundedRectangle(cornerRadius: 10))
     }
     // Affiche l'indicateur de piquant du plat (SpicyView)
@@ -55,10 +56,10 @@ struct DishDetailsView: View {
         HStack {
             Spacer()//pour pousser la vue sur la droite
             SpicyView(myDish: myDish)
-                .frame(width: 70, height: 20)
+                .frame(width: 74, height: 22)
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
-                .padding()
+                .padding(12)
         }
     }
     
@@ -67,27 +68,32 @@ struct DishDetailsView: View {
         VStack(alignment: .leading, content: {
             Group {
                 Text("Allergènes:")
-                    .foregroundStyle(.secondary)
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
+                    .fontWeight(.medium)
+                    //.font(.system(size: 18, weight: .bold, design: .rounded))
+                Spacer()
                 Text(myDish.allergens)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(nil)
-                    .foregroundStyle(.secondary)
-                    .font(.system(size: 13, weight: .regular, design: .rounded))
-                Divider()
+                    //.font(.system(size: 13, weight: .regular, design: .rounded))
+                
+                Divider().padding(.vertical)
                 Text("Ingrédients:")
-                    .foregroundStyle(.secondary)
-                    .font(.system(size: 18, weight: .bold, design: .monospaced))
+                    .fontWeight(.medium)
+                    //.font(.system(size: 18, weight: .bold, design: .monospaced))
+                Spacer()
                 Text(myDish.ingredients)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(nil)
-                    .foregroundStyle(.secondary)
-                    .font(.system(size: 13, weight: .regular, design: .rounded))
+                    //.font(.system(size: 13, weight: .regular, design: .rounded))
             }
+            .foregroundStyle(.secondary)
+            .font(.custom(myFontName, size: 12 * dynamicFontSize))
         })
         .padding(.top)
+        
+        
     }
 }
 

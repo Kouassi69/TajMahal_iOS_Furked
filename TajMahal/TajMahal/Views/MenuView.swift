@@ -116,33 +116,35 @@ struct MenuView: View {
     // ViewModel pour accéder aux données des plats
     let myViewModel: ViewModel = ViewModel()
     let dishType: [String] = ["Entrées", "Plats Principaux"]
-    
-    // Calcul de la largeur de la ligne et de l'image en fonction de la largeur de l'écran
-    let screenWidth = UIScreen.main.bounds.width
-    let lineWidth: CGFloat
-    let imageWidth: CGFloat
-
-    // Initialisateur pour calculer lineWidth et imageWidth
-    init() {
-        lineWidth = screenWidth - 40 // Laisser un padding de 40 points (20 de chaque côté)
-        imageWidth = lineWidth / 3   // Diviser la ligne en 3 pour l'image
-    }
 
     var body: some View {
+
         // NavigationStack pour la navigation entre les écrans
         NavigationStack {
             // Liste des plats
-            List {
+            Form {
                 // Parcours des types de plats et création des sections
                 ForEach(dishType, id: \.self) { type in
-                    Section(header: Text(type).textCase(nil)) {
+                    //let sectionTitle : String = type
+                    //sectionTitle.font(.custom(myFontName, size: 14))
+                   // sectionTitle.textCa
+                    Section(header: Text(type).textCase(nil).font(.custom(myFontName, size: 14))) {
                         // Contenu de la section, défini dans une fonction séparée
                         menuContent(for: type)
-                    }
+                    }//.background(Color.red)
+                    //.padding()
                 }
             }
+            //.formStyle(.columns)
+            //.background(Color.blue)
+            //.padding()
+            //.listStyle(.grouped)
+            //.frame(width: myScreenWidth - 20)//application d'un style à la liste correspondant au design demandé
+            
+            //.scaledToFill()
+            
             .navigationTitle("Menu") // Titre de la navigation
-            .listRowSpacing(15.0)    // Espacement entre les rangées de la liste
+            .listRowSpacing(12)    // Espacement entre les rangées de la liste
             .navigationBarBackButtonHidden(true) // Masquer le bouton de retour par défaut
             .toolbar {
                 // Bouton personnalisé pour le retour
@@ -169,11 +171,15 @@ struct MenuView: View {
 
     // Fonction pour créer un NavigationLink pour chaque plat
     private func navigationLinkFor(_ dish: Dish) -> some View {
-        NavigationLink(destination: DishDetailsView(myDish: dish)) {
-            // Affichage personnalisé pour chaque plat
-            ListRowView(myDish: dish, lineWidth: lineWidth, imageWidth: imageWidth)
+        ZStack {
+            NavigationLink(destination: DishDetailsView(myDish: dish)) {
+                //EmptyView()
+                // Affichage personnalisé pour chaque plat
+                //ListRowView(myDish: dish)//, lineWidth: lineWidth, imageWidth: imageWidth)
+            }.opacity(0)
+                //.frame(height: 100)
+            ListRowView(myDish: dish).frame(alignment: .leading)
         }
-        .frame(height: 100) // Hauteur fixe pour chaque élément de la liste
     }
 }
 

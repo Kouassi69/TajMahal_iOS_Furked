@@ -91,15 +91,7 @@
 import SwiftUI
 
 struct WelcomeView: View {
-    let myWidth: CGFloat = 0.93 * UIScreen.main.bounds.width //Pour adapter le ratio des vues à l'écran
-    let myHeight: CGFloat = 0.93 * UIScreen.main.bounds.height
     
-    let customRed = Color(rgbRed: 191, green: 62, blue: 55)
-    let myFontName = "Plus Jakarta Sans"
-    // Calculer la taille de la police en fonction de la largeur de l'écran
-    var dynamicFontSize: CGFloat {
-        return myWidth / 393 // Application du ratio
-    }
     
     /*init() {
      // Imprimer les dimensions de l'écran dans la console
