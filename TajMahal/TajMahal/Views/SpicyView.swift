@@ -11,17 +11,22 @@ struct SpicyView: View {
     let myDish: Dish
     var body: some View {
         HStack {//cette partie pour créer le nombre d'étoiles rouge en fonction du niveau d'épices.
+           
             let spicy = getSpicyFunc(spice: myDish.spiceLevel) //Je détermine le niveau d'épices
             ForEach(0..<spicy, id: \.self) { _ in
-                createSpicyImage().foregroundStyle(Color(rgbRed: 191, green: 62, blue: 55)) //je crée les étoiles rouges correspondantes
+                //createSpicyImage().foregroundStyle(Color(rgbRed: 191, green: 62, blue: 55)) //je crée les étoiles rouges correspondantes
+                Image("Piment colore")
+                    //.resizable()
             }
             ForEach(0..<(3-spicy), id: \.self) { _ in //je crée le reste des étoiles qui sont grises
-                createSpicyImage().foregroundStyle(.secondary)
+                //createSpicyImage().foregroundStyle(.secondary)
+                Image("Piment")
+                    //.resizable()
             }
         }
     }
 }
-
+/*
 //Fonction pour créer les imagesSpicy de base
 func createSpicyImage() -> some View {
     let myImage: Image? = Image(systemName: "star.fill")
@@ -31,11 +36,11 @@ func createSpicyImage() -> some View {
         return AnyView(EmptyView())
     }
     return AnyView(image
-            .resizable()
-            .scaledToFill()
-            .frame(width: 18, height: 18, alignment: .trailing)
+            //.resizable()
+            .scaledToFit()
+            //.frame(width: 18, height: 18, alignment: .trailing)
     )
-}
+}*/
 
 #Preview {
     SpicyView(myDish: exampleDish)

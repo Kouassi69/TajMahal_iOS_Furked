@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "Type de Service.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Type de Service@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "4. potato-fritter-or-aloo-pakora-2021-08-28-05-58-45-utc.jpg",
+      "filename" : "Type de Service@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

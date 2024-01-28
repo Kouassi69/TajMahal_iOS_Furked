@@ -55,7 +55,7 @@ struct DishDetailsView: View {
         HStack {
             Spacer()//pour pousser la vue sur la droite
             SpicyView(myDish: myDish)
-                .frame(width: 90, height: 28)
+                .frame(width: 70, height: 20)
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding()

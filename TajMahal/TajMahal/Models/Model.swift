@@ -26,13 +26,6 @@ struct Dish : Hashable {
     var price: String
 }
 
-//Cette extension permet de gérer le formalistme des titres des sessions pour se conformer à la maquette
-extension String {
-    func capitalizedFirstLetter() -> String {
-        return self.capitalized(with: Locale.current)
-    }
-}
-
 //Cette extension permet de créer une couleur spécifique pour le client
 extension Color {
     init(rgbRed: Double, green: Double, blue: Double) {

@@ -37,15 +37,3 @@ func getSpicyFunc(spice: SpiceLevel) -> Int {
     return spicy
 }
 
-/*func createSpicyImage2() -> some View {
- let myImage : Image? = Image(systemName: "star.fill")
- guard let image = myImage else {
- print(Error.Type.self)
- return AnyView(EmptyView())
- }
- return image
- .resizable()
- .frame(width: 20, height: 20, alignment: .trailing)
- .scaledToFit()
- .foregroundStyle(.secondary)
- }*/
