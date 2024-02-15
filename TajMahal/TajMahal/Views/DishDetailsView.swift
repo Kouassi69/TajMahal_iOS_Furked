@@ -27,7 +27,6 @@ struct DishDetailsView: View {
                     }
                     // Détails du plat
                     additionalDishDetails() //Appel de la fonction qui crée la vue détails du plat
-                    //.frame(width: myWidth) // Définit la largeur de la vue détaillée
                 }
                 .frame(width: myWidth)
                 .padding(.horizontal, 15) // Centre le contenu de VStack
@@ -56,10 +55,11 @@ struct DishDetailsView: View {
         HStack {
             Spacer()//pour pousser la vue sur la droite
             SpicyView(myDish: myDish)
-                .frame(width: 74, height: 22)
+                .frame(width: 70, height: 22)
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding(12)
+            
         }
     }
     
@@ -69,31 +69,24 @@ struct DishDetailsView: View {
             Group {
                 Text("Allergènes:")
                     .fontWeight(.medium)
-                    //.font(.system(size: 18, weight: .bold, design: .rounded))
                 Spacer()
                 Text(myDish.allergens)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(nil)
-                    //.font(.system(size: 13, weight: .regular, design: .rounded))
-                
                 Divider().padding(.vertical)
                 Text("Ingrédients:")
                     .fontWeight(.medium)
-                    //.font(.system(size: 18, weight: .bold, design: .monospaced))
                 Spacer()
                 Text(myDish.ingredients)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(nil)
-                    //.font(.system(size: 13, weight: .regular, design: .rounded))
             }
             .foregroundStyle(.secondary)
             .font(.custom(myFontName, size: 12 * dynamicFontSize))
         })
         .padding(.top)
-        
-        
     }
 }
 

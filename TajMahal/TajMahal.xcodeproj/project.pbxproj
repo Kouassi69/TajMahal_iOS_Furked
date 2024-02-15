@@ -31,7 +31,6 @@
 		9C2295D92B669617005D3875 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C2295C72B669617005D3875 /* OFL.txt */; };
 		9C2295DA2B669617005D3875 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C2295C82B669617005D3875 /* README.txt */; };
 		9C2295DB2B669617005D3875 /* PlusJakartaSans-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C2295C92B669617005D3875 /* PlusJakartaSans-VariableFont_wght.ttf */; };
-		9C2295F82B66C57C005D3875 /* TestCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2295F72B66C57C005D3875 /* TestCode.swift */; };
 		9C538F932B5748A7008F91BA /* DishDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C538F922B5748A7008F91BA /* DishDetailsView.swift */; };
 		9C538F952B589306008F91BA /* SpicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C538F942B589306008F91BA /* SpicyView.swift */; };
 		9C5D36752B59E6BC00D26F27 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5D36742B59E6BC00D26F27 /* MenuView.swift */; };
@@ -65,7 +64,6 @@
 		9C2295C72B669617005D3875 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		9C2295C82B669617005D3875 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		9C2295C92B669617005D3875 /* PlusJakartaSans-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlusJakartaSans-VariableFont_wght.ttf"; sourceTree = "<group>"; };
-		9C2295F72B66C57C005D3875 /* TestCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCode.swift; sourceTree = "<group>"; };
 		9C538F922B5748A7008F91BA /* DishDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailsView.swift; sourceTree = "<group>"; };
 		9C538F942B589306008F91BA /* SpicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpicyView.swift; sourceTree = "<group>"; };
 		9C5D36742B59E6BC00D26F27 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				42E9DCBE2AF11439007CE7D0 /* WelcomeView.swift */,
 				9C5D36742B59E6BC00D26F27 /* MenuView.swift */,
-				9C2295F72B66C57C005D3875 /* TestCode.swift */,
 				9C88F3FF2B549E7700877E50 /* ListRowView.swift */,
 				9C538F922B5748A7008F91BA /* DishDetailsView.swift */,
 				9C538F942B589306008F91BA /* SpicyView.swift */,
@@ -280,7 +277,6 @@
 				42E9DCAE2AF11136007CE7D0 /* TajMahalApp.swift in Sources */,
 				9C538F952B589306008F91BA /* SpicyView.swift in Sources */,
 				428D2B512AFA851900BBA4F5 /* Model.swift in Sources */,
-				9C2295F82B66C57C005D3875 /* TestCode.swift in Sources */,
 				9C538F932B5748A7008F91BA /* DishDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

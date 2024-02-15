@@ -38,16 +38,14 @@ let myWidth: CGFloat = 0.93 * UIScreen.main.bounds.width //Pour adapter le ratio
 let myHeight: CGFloat = 0.93 * UIScreen.main.bounds.height
 
 let customRed = Color(rgbRed: 191, green: 62, blue: 55)
+let customGray = Color(rgbRed: 241, green: 241, blue: 241)
 
 // Calculer la taille de la police en fonction de la largeur de l'écran
 var dynamicFontSize: CGFloat {
-    return myWidth / 393 // Application du ratio
+    return myScreenWidth / 393 // Application du ratio
 }
-//Définition de la font générale du projet
+// Définition de la font de base du projet
 let myFontName = "Plus Jakarta Sans"
 
-//Exemple accessible à tout le projet
+// Exemple accessible à tout le projet
 let exampleDish = Dish(name: "Samousas aux légumes", description: "Agneau mijoté dans une sauce épicée", allergens: "Ail, oignon", ingredients: "Agneau, oignons, ail, gingembre, poudre de curcuma, poudre de cumin, poudre de coriandre, piment en poudre, tomates en purée, huile, coriandre fraîche", spiceLevel: .hot, imageName: "Tikka Masala", price: "11,00€")
-
-
-
