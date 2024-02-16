@@ -10,39 +10,39 @@ import SwiftUI
 struct DishDetailsView: View {
     @Environment(\.dismiss) var dismiss
     let myDish: Dish
-    
+
     var body: some View {
-        GeometryReader { geometry in
-            let screenWidth = geometry.size.width //lecture de la taille de l'écran
-            let screenHeight = geometry.size.height
-            // s'assurer que myWidth ne devient jamais négatif afin d'éviter le message dans la console
-            let myWidth = max(screenWidth - 30, 0)
-            
-            ScrollView {//Pour permettre la navigation quand le téléphone en en landscape
-                VStack {
-                    // Image principale avec le niveau spicy en haut à droite
-                    ZStack(alignment: .top) {
-                        mainDishImage(width: myWidth, height: 0.6 * screenHeight) //Appel de la fonction qui crée la vue image
-                        spicyIndicator() //Appel de la fonction qui crée la vueniveau d'épice
-                    }
-                    // Détails du plat
-                    additionalDishDetails() //Appel de la fonction qui crée la vue détails du plat
+        ScrollView {//Pour permettre la navigation quand le téléphone est en landscape
+            VStack {
+                // Image principale avec le niveau spicy en haut à droite
+                ZStack(alignment: .top) {
+                    mainDishImage(width: myWidth, height: 0.6 * myHeight) //Appel de la fonction qui crée la vue image
+                    spicyIndicator() // Appel de la fonction qui crée la vueniveau d'épice
                 }
-                .frame(width: myWidth)
-                .padding(.horizontal, 15) // Centre le contenu de VStack
-                .navigationTitle("\(myDish.name)")
-                .navigationBarBackButtonHidden(true)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button(action: { dismiss() }) {
-                            Image(systemName: "chevron.backward").foregroundColor(.primary)
-                        }
+                // Détails du plat
+                additionalDishDetails() // Appel de la fonction qui crée la vue détails du plat
+            }
+            .frame(width: myWidth)
+            .padding(.horizontal, 15) // Centre le contenu de VStack
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "chevron.backward")
+                            .fontWeight(.bold)
+                            .foregroundColor(.primary)
                     }
+                }
+                ToolbarItem(placement: .navigationBarLeading) { // Positionnement du titre à gauche
+                    Text("\(myDish.name)")
+                        .font(.custom(myFontName, size: 16 * dynamicFontSize))
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
                 }
             }
         }
     }
-    
+
     func mainDishImage(width: CGFloat, height: CGFloat) -> some View {
         Image("\(myDish.imageName)")
             .resizable()
@@ -59,24 +59,24 @@ struct DishDetailsView: View {
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding(12)
-            
         }
     }
-    
+
     // Affiche les détails supplémentaires du plat
     func additionalDishDetails() -> some View {
         VStack(alignment: .leading, content: {
             Group {
                 Text("Allergènes:")
-                    .fontWeight(.medium)
+                    .fontWeight(.bold)
                 Spacer()
                 Text(myDish.allergens)
                     .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(nil)
-                Divider().padding(.vertical)
+                Divider()
+                    .padding(.vertical)
                 Text("Ingrédients:")
-                    .fontWeight(.medium)
+                    .fontWeight(.bold)
                 Spacer()
                 Text(myDish.ingredients)
                     .multilineTextAlignment(.leading)

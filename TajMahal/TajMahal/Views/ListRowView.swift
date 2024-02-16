@@ -11,8 +11,8 @@ struct ListRowView: View {
     
     // Je déclare le repas de façon général afin de pouvoir adapter les données
     let myDish: Dish
-    let lineHeight : CGFloat = 100
-    
+    let lineHeight : CGFloat = 90
+
     var body: some View {
         HStack {
             Image("\(myDish.imageName)")
@@ -45,7 +45,7 @@ struct ListRowView: View {
         .frame(height: lineHeight)
         .foregroundStyle(.secondary)
         .background(Color.white)
-        .padding()
+        .padding(12)
     }
 }
 

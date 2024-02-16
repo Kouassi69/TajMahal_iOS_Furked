@@ -26,15 +26,15 @@ struct Dish : Hashable {
     var price: String
 }
 
-//Cette extension permet de créer une couleur spécifique pour le client
+// Cette extension permet de créer une couleur spécifique pour le client
 extension Color {
     init(rgbRed: Double, green: Double, blue: Double) {
         self.init(red: rgbRed / 255.0, green: green / 255.0, blue: blue / 255.0)
     }
 }
 
-let myScreenWidth: CGFloat = UIScreen.main.bounds.width //Width de l'écran
-let myWidth: CGFloat = 0.93 * UIScreen.main.bounds.width //Pour adapter le ratio des vues à l'écran
+let myScreenWidth: CGFloat = UIScreen.main.bounds.width // Width de l'écran
+let myWidth: CGFloat = 0.93 * UIScreen.main.bounds.width // Pour adapter le ratio des vues à l'écran
 let myHeight: CGFloat = 0.93 * UIScreen.main.bounds.height
 
 let customRed = Color(rgbRed: 191, green: 62, blue: 55)

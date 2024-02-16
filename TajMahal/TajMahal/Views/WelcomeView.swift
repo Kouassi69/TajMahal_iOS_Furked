@@ -19,11 +19,12 @@ struct WelcomeView: View {
                 restaurantInfo
                     .padding(.vertical)
                 restaurantDetails
+                    .padding(.vertical)
                 navigationButton
             }
         }
     }
-    
+
     var restaurantInfo: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -56,10 +57,9 @@ struct WelcomeView: View {
             Label("www.tajmahal.fr", image: "Globe")
             Spacer()
             Label("06 12 34 56 78", image: "Telephone")
-
         }
-        .frame(width: myWidth, height: 0.15 * myHeight, alignment: .leading)
-        .font(.custom(myFontName, size: 16 * dynamicFontSize))
+        .frame(width: myWidth, height: 0.2 * myHeight)//, alignment: .leading)
+        .font(.custom(myFontName, size: 15 * dynamicFontSize))
         .fontWeight(.semibold)
         .foregroundStyle(.secondary)
     }
@@ -68,13 +68,13 @@ struct WelcomeView: View {
         NavigationLink(destination: MenuView()) {
             Text("Accéder au menu")
                 .foregroundColor(.white)
-                .font(.custom(myFontName, size: 22 * dynamicFontSize))
+                .font(.custom(myFontName, size: 20 * dynamicFontSize))
                 .fontWeight(.bold)
         }
-        .frame(width: myWidth, height: 0.07 * myHeight)
+        .frame(width: myWidth, height: 0.06 * myHeight)
         .background(customRed)
         .cornerRadius(10)
-        .padding(40)
+        .padding(.bottom, 40)
     }
 
     private func labelRow(text: String, label: String, imageName: String) -> some View {

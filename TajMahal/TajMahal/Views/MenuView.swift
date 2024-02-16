@@ -20,7 +20,11 @@ struct MenuView: View {
         List {
             // Parcours des types de plats et création des sections
             ForEach(dishType, id: \.self) { type in
-                Section(header: Text(type).textCase(nil).font(.custom(myFontName, size: 14)).background(customGray)) {
+                Section(header: Text(type)
+                    .textCase(nil)
+                    .font(.custom(myFontName, size: 15))
+                    .fontWeight(.bold)
+                    .background(customGray)) {
                     // Contenu de la section, défini dans une fonction séparée
                     menuContent(for: type)
                         .listRowBackground(Color.clear)
@@ -39,7 +43,7 @@ struct MenuView: View {
             // Bouton personnalisé pour le retour
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: { dismiss() }) {
-                    Image(systemName: "chevron.backward")
+                    Image(systemName: "chevron.backward")/*chevron.backward*/
                         .foregroundColor(.primary)
                 }
             }
